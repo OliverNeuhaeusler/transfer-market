@@ -3,7 +3,11 @@ import mongoose from 'mongoose';
 const playerSchema = new mongoose.Schema({
   name: String,
   price: Number,
-  skills: String,
+  free_transfer: Boolean,
+  club: String,
+  position: String,
+  email: String,
+  skills: Array,
 });
 
 const Player = mongoose.model('Players', playerSchema);

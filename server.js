@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import clubRoutes from './routes/clubs.routes.js';
 import playerRoutes from './routes/players.routes.js';
 import wischlistRoutes from './routes/wishList.routes.js';
@@ -13,6 +14,7 @@ mongoose.connect(connectionString, {
 
 const server = express();
 server.use(express.json());
+server.use(cors());
 server.use(clubRoutes);
 server.use(playerRoutes);
 server.use(wischlistRoutes);

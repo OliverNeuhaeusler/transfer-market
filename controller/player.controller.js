@@ -5,6 +5,10 @@ function postPlayers(req, res) {
     name: req.body.name,
     price: req.body.price,
     skills: req.body.skills,
+    free_transfer: req.body.free_transfer,
+    club: req.body.club,
+    position: req.body.position,
+    email: req.body.email,
   });
   player
     .save()
@@ -43,6 +47,7 @@ function deletePlayers(req, res) {
     res.json({
       success: true,
       message: `The player ${doc.name} has been deleted.`,
+      data: doc,
     });
   });
 }
