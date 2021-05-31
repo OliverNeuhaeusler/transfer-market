@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import clubRoutes from './routes/clubs.routes.js';
 import playerRoutes from './routes/players.routes.js';
+import wischlistRoutes from './routes/wishList.routes.js';
 
 const connectionString = 'mongodb://localhost:27017/transfer-market';
 mongoose.connect(connectionString, {
@@ -14,6 +15,7 @@ const server = express();
 server.use(express.json());
 server.use(clubRoutes);
 server.use(playerRoutes);
+server.use(wischlistRoutes);
 
 server.get('/', (req, res) => res.json({ status: 'Server is running. ' }));
 
